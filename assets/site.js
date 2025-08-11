@@ -1,14 +1,9 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  const trigger = document.querySelector('[data-menu="industries-trigger"]');
-  const parentLi = trigger ? trigger.closest('li') : null;
-  if (trigger && parentLi) {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      parentLi.classList.toggle('open');
-    });
-    document.addEventListener('click', (e) => {
-      if (!parentLi.contains(e.target)) parentLi.classList.remove('open');
-    });
+document.addEventListener('DOMContentLoaded',()=>{
+  const t=document.querySelector('[data-menu="industries-trigger"]');
+  const p=t?t.closest('li'):null;
+  if(t&&p){
+    t.addEventListener('click',e=>{e.preventDefault();p.classList.toggle('open')});
+    document.addEventListener('click',e=>{if(!p.contains(e.target))p.classList.remove('open')});
   }
 });
